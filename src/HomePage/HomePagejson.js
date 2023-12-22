@@ -29,26 +29,26 @@ export const hamePage = [
 export const hamePageImage = [
     {
         id:1,
-        devimage:"Homeimage6"
+        devimage:"../Images/HomeImages/Homeimage6.png"
     },
     {
         id:2,
-        devimage:"Homeimage6"
+        devimage:"../Images/HomeImages/Homeimage6.png"
     },
     {
         id:3,
-        devimage:"Homeimage6"
+        devimage:"../Images/HomeImages/Homeimage6.png"
     },
     {
         id:4,
-        devimage:"Homeimage6"
+        devimage:"../Images/HomeImages/Homeimage6.png"
     },
     {
         id:5,
-        devimage:"Homeimage6"
+        devimage:"../Images/HomeImages/Homeimage6.png"
     },
     {
         id:6,
-        devimage:"Homeimage6"
+        devimage:"../Images/HomeImages/Homeimage6.png"
     },
 ]

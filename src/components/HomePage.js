@@ -137,9 +137,7 @@ function HomePage() {
             {hamePageImage.map((user, index) => {
               return (
                 <div className='d-flex w-100'  >
-                  <div> <img src={require('../Images/HomeImages/' +
-                    user.devimage +
-                    '.png')} alt='Homeimage6' className='Homeimage6_width' /></div>
+                  <div id={index}> <img src={user.devimage} alt='Homeimage6' className='Homeimage6_width' /></div>
                 </div>
               )
             })}
@@ -148,13 +146,13 @@ function HomePage() {
         </div>
         <div className='home_mostly_font mt-5'>Experienced with top overseas firms</div>
         <div className='d-flex gap-4 justify-content-center py-4'>
-          <div><img src={HomeCompany} alt='HomeCompany' style={{ width: "10vw",height:"5vh" }} /></div>
-          <div><img src={HomeCompany1} alt='HomeCompany' style={{ width: "10vw",height:"5vh" }} /></div>
-          <div><img src={HomeCompany2} alt='HomeCompany' style={{ width: "10vw",height:"5vh" }} /></div>
-          <div><img src={HomeCompany3} alt='HomeCompany' style={{ width: "10vw",height:"5vh" }} /></div>
-          <div><img src={HomeCompany4} alt='HomeCompany' style={{ width: "10vw",height:"5vh" }} /></div>
-          <div><img src={HomeCompany5} alt='HomeCompany' style={{ width: "10vw",height:"5vh" }} /></div>
-          <div><img src={HomeCompany6} alt='HomeCompany' style={{ width: "10vw",height:"5vh" }} /></div>
+          <div><img src={HomeCompany} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
+          <div><img src={HomeCompany1} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
+          <div><img src={HomeCompany2} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
+          <div><img src={HomeCompany3} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
+          <div><img src={HomeCompany4} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
+          <div><img src={HomeCompany5} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
+          <div><img src={HomeCompany6} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
         </div>
       </div>
     </div>
