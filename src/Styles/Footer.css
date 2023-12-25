@@ -1,0 +1,93 @@
+.footer_bg {
+    background: #040229;
+    padding: 2rem 0rem;
+}
+
+.footer_flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 7rem;
+}
+
+.service_footer {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15.66px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.footer_line {
+    background: #262451;
+    height: 2px;
+    margin: 1rem;
+}
+
+.Maximize_footer {
+    text-align: center;
+    color: #FFF;
+    font-family: inter;
+    font-size: 7.685px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13.174px;
+    /* 171.429% */
+}
+
+.footer_ul {
+    list-style: none;
+}
+
+.Home_footer {
+    color: var(--White, #FFF);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.sQuick_footer {
+    color: var(--White, #FFF);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 120% */
+}
+
+.aravind_footer {
+    color: var(--White, #FFF);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    /* 181.25% */
+}
+
+.footer2_line {
+    background: #FFF;
+    height: 1px;
+    /* width: 1240px; */
+}
+
+.footer_flex1{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .footer_flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0rem;
+    }
+}
