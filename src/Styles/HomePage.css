@@ -10,16 +10,23 @@
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    gap: 1rem;
+    
+  }
+
+  .videoTag{
+    position: absolute;
+    width: 100%;
   }
 
   .home_dev_font {
     color: #FFF;
-    font-family: Inter;
-    font-size: 65px;
+    font-family: 'Inter';
+    font-size: 59px;
     font-style: normal;
     font-weight: 600;
-    line-height: 90.75px;
-    /* 139.615% */
+    line-height: 64.75px;
+    position: relative;
   }
 
   .home_dev1_Revenue {
@@ -27,6 +34,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
   }
 
   .home_botton {
@@ -39,6 +47,7 @@
     font-weight: 600;
     line-height: 20.835px;
     /* 126.273% */
+    position: relative;
   }
 
   .home_dev2_get {
@@ -50,10 +59,12 @@
     line-height: 20.831px;
     /* 120% */
     letter-spacing: 0.434px;
+    position: relative;
   }
 
   .homestar_color {
     color: #F3CD03;
+    position: relative;
   }
 
   .home_dev3_our {
@@ -65,6 +76,7 @@
     font-weight: 500;
     line-height: 26.528px;
     /* 141.667% */
+    position: relative;
   }
 
   .home_font1_aswin {
@@ -76,6 +88,7 @@
     font-weight: 500;
     line-height: 26.528px;
     /* 141.667% */
+    position: relative;
   }
 
   .home_font2_aswin {
@@ -87,6 +100,7 @@
     font-weight: 300;
     line-height: 26.528px;
     /* 210.498% */
+    position: relative;
   }
 
   .dev_flex1_home {
@@ -97,6 +111,7 @@
 
   .home_dev5_card {
     background: #2F2F2F;
+    position: relative;
   }
 
   .home_webfont {
@@ -112,10 +127,12 @@
 
   .Homeimage4_width {
     width: 3vw;
+    position: relative;
   }
 
   .home_card3_bg {
     background: radial-gradient(192.13% 76.64% at 50% 50%, rgba(255, 178, 167, 0.25) 0%, rgba(201, 191, 255, 0.25) 74.61%), #FFF;
+    position: relative;
     /* height: 100vh; */
   }
 
@@ -181,7 +198,7 @@
   }
 
   .home_card4_bg {
-    background: linear-gradient(180deg, #F9DDE5 0%, rgba(249, 221, 229, 0.00) 100%);
+    background: linear-gradient(180deg, #F9DDE5 0%, rgba(241, 232, 235, 0) 100%);
     /* height: 100vh; */
   }
 
@@ -209,16 +226,81 @@
     cursor: pointer;
   }
 
-  .Homeimage6_width{
+  .Homeimage6_width {
     width: 30vw;
+  }
+
+  .FrameHome9_style {
+    width: 20vw;
+  }
+
+  .Hpme_card5_bg {
+    background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
+    /* height: 163vh; */
+  }
+
+  .bg_home_card_makes {
+    border-radius: 20.879px;
+    border: 1px solid rgba(3, 177, 255, 0.52);
+    background: url('../Images/HomeImages/home_makebg.svg'), lightgray 0% 0% / 134.16786193847656px 134.16786193847656px repeat, radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);
+    background-blend-mode: overlay, normal;
+    /* backdrop-filter: blur(34.79788589477539px); */
+    width: 80%;
+    /* height: 100vh; */
+  }
+
+  .what_home_bg {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /* letter-spacing: 0.55px; */
+  }
+
+  .choice_homebg {
+    border-radius: 30.699px;
+    background: #03B1FF;
+  }
+
+  .Generation_home {
+    color: #FFF;
+    font-family: inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    /* 133.333% */
+  }
+
+  .home_Create_font {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.5px;
+  }
+
+  .home_card6_bg {
+    background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
+    /* height: 140vh; */
   }
 
   @media (max-width: 768px) {
     .dev_flex_home {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       flex-direction: column;
       align-items: center;
+    }
+    .videoTag{
+      z-index: -1;
+      position: absolute;
+      width: 100%;
     }
 
     .dev_flex1_home {
@@ -310,4 +392,250 @@
       justify-content: center;
       align-items: center;
     }
+
+    .FrameHome9_style {
+      width: 50vw;
+    }
+
+    .Hpme_card5_bg {
+      background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
+      /* height: 100%;
+      width: 100%; */
+    }
+
+    .home_yourfont1 {
+      background: linear-gradient(89deg, #333 3.17%, #A802C3 70.7%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: Inter;
+      font-size: 19.995px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .Homeimage5_style {
+      width: 100%;
+    }
+
+    .home_arefont2 {
+      color: #333;
+      font-family: Inter;
+      font-size: 9.471px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 14.631px;
+      /* 154.476% */
+    }
+
+    .BsChevronDown_style {
+      border: none;
+      background: radial-gradient(192.13% 76.64% at 50% 50%, rgba(255, 178, 167, 0.25) 0%, rgba(201, 191, 255, 0.25) 74.61%), #FFF;
+      color: #A903C4;
+    }
+
+    .home_Responsive {
+      color: #010101;
+      font-family: inter;
+      font-size: 13.681px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 13.211px;
+      /* 96.564% */
+    }
+
+    .home_get_style {
+      border-radius: 16px;
+      border: 1px solid #010101;
+      background: #404040;
+      color: #FFF;
+      font-family: Inter;
+      font-size: 8.32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 10.506px;
+      /* 126.273% */
+    }
+
+    .home_card4_bg {
+      background: linear-gradient(180deg, #F9DDE5 0%, rgba(241, 232, 235, 0) 100%);
+      /* height: 100vh; */
+    }
+
+    .home_mostly_font {
+      color: #010101;
+      text-align: center;
+      font-family: Inter;
+      font-size: 15.317px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 12.818px; /* 83.688% */
+    }
+
+    .home_mostly_font1 {
+      color: #6864ED;
+      text-align: center;
+      font-family: Inter;
+      font-size: 13.275px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 12.818px;
+      /* 96.564% */
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+
+    .Homeimage6_width {
+      width: 20vw;
+    }
+
+    .FrameHome9_style {
+      width: 50vw;
+    }
+
+    .Hpme_card5_bg {
+      background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
+    }
+
+    .bg_home_card_makes {
+      border-radius: 20.879px;
+      /* backdrop-filter: blur(34.79788589477539px); */
+      width: 90%;
+      /* height: 100vh; */
+    }
+
+    .what_home_bg {
+      background: none;
+      color: #FFF;
+      text-align: center;
+      font-family: Inter;
+      font-size: 23.327px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 50px;
+      letter-spacing: 0.233px;
+    }
+
+    .choice_homebg {
+      border-radius: 30.699px;
+      background: #03B1FF;
+    }
+
+    .Generation_home {
+      color: #FFF;
+      font-family: inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 32px;
+      /* 133.333% */
+    }
+
+    .home_Create_font {
+      color: #FFF;
+      text-align: start;
+      font-family: Inter;
+      font-size: 23.327px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0.233px;
+    }
+
+    .home_card6_bg {
+      background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
+      /* height: 140vh; */
+    }
+  }
+
+
+  .sideBar {
+    height: 100%;
+    width: 400px;
+    height: 100%;
+  }
+
+  .stepSummary {
+    width: 80px;
+    height: 100%;
+  }
+
+  .mainSection {
+    height: 50%;
+    width: calc(100% - 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999999;
+  }
+
+  .MuiPaper-root {
+    background-color: none;
+  }
+
+  .step_bg_line {
+    color: #FFFFFF;
+  }
+
+  .Register_home {
+    color: #FFF;
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    /* 133.333% */
+  }
+
+  .Create_home_font1 {
+    color: #ABE5FF;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.376px;
+    /* 161.033% */
+  }
+
+
+  .slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 500px;
+  }
+  
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .slide {
+    display: inline-block;
+  
+    height: 400px;
+    width: 100%;
+    border-radius: 40px;
+  }
+  
+  /* Buttons */
+  
+  .slideshowDots {
+    text-align: center;
+  }
+  
+  .slideshowDot {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  
+    cursor: pointer;
+    margin: 15px 7px 0px;
+  
+    /* background-color: #c4c4c4; */
+  }
+  
+  .slideshowDot.active {
+    background-color: #FFF;
   }
