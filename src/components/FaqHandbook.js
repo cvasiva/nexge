@@ -12,18 +12,18 @@ const FaqHandbook = () => {
             Queries_Decoded.map(v => {
                 val[v.id] = false
             })
-            setToggle(val)
+            setToggle(!val)
         }
-    }, [toggle])
+    }, [])
     const handledropdown = (item) => {
         setToggle({ ...toggle, [item.id]: !toggle[item.id] })
     }
     return (
-        <div className=''>
-           
+        <div className='tdi9mq0 tdi9mq4'>
             <div className='Queries_handbook py-5'>Queries Decoded: <span className='Queries_handbookfont'>Your FAQ Handbook</span></div>
             <div className='faqhand_bg_grid'>
                 {Queries_Decoded.map((item, index) => {
+                    console.log("toggle[item.id]",toggle[item.id])
                     return (
                         <div className=''>
                             <div className="faqhand_bg_white">
@@ -35,7 +35,7 @@ const FaqHandbook = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div > {toggle[item.id] && <div className='content_bspan'> {item.discription} </div>} </div>
+                                <div > {toggle[item.id]  && <div className='content_bspan'> {item.discription} </div>} </div>
                             </div>
                         </div>
                     )
