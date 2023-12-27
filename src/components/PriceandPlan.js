@@ -44,15 +44,15 @@ const PriceandPlan = () => {
     const check = index => setSelectedIndex(index);
     return (
         <div className=''>
-            <div className=' py-5'>
+            <div className='tdi9mq0 tdi9mq4 py-5'>
                 <div className='price_font mt-5'>Choose a package that fits your needs <br></br>with our <span>convenient EMI</span></div>
                 <div className='price_bg_flex'>
-                    <div className="price_bg pt-5 my-5">
+                    <div className="price_bg py-4 my-5">
                         <div className="">
                             <div className="">
                                 <section
                                     id="slider"
-                                    className="w-16 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0"
+                                    className=""
                                 >
                                     <input
                                         type="radio"

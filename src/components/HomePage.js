@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "../Styles/HomePage.css"
-import nexge_image1 from "../Images/HomeImages/nexge_image1.png"
 import Homeimage2 from "../Images/HomeImages/Homeimage2.png"
 import { BsArrowRight } from "react-icons/bs";
 import { IoIosStar } from "react-icons/io";
@@ -27,46 +26,36 @@ import FrameHome2 from "../Images/HomeImages/FrameHome2.png"
 import FrameHome1 from "../Images/HomeImages/FrameHome1.png"
 import ScrollCarousel from 'scroll-carousel-react';
 import {
-  Collapse, CardBody, Card, Row, Col, Carousel,
+  Carousel,
   CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption,
 } from 'reactstrap';
 import { BsChevronDown } from "react-icons/bs";
-import { hamePage, hamePageImage } from "../HomePage/HomePagejson"
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-// import Typography from '@mui/material/Typography';
-import { CarouselWrapper } from "react-pretty-carousel";
+import { hamePage } from "../HomePage/HomePagejson"
 import system_homeimage from "../Images/HomeImages/system_homeimage.png"
 import PriceandPlan from './PriceandPlan';
 import FaqHandbook from './FaqHandbook';
-import { Stepper, Step, StepLabel, StepButton, StepContent } from "@material-ui/core";
-import { BsCheckLg } from "react-icons/bs";
-import { Typography } from "@material-ui/core";
+// import { Stepper, Step, StepLabel, StepButton, StepContent } from "@material-ui/core";
+// import { Typography } from "@material-ui/core";
 import { BsChevronUp } from "react-icons/bs";
-import videohome from "../Images/HomeImages/videohome.mp4"
 import svgimg from '../Images/HomeImages/Home_images_slide.svg'
 import Home_makebg from '../Images/HomeImages/Home_images_slide1.svg'
-
+import video from '../Images/HomeImages/nexgen_mp4.mp4'
 function HomePage() {
   const items_slide = [
     {
-      side_images: '../Images/HomeImages/Home_images_slide.svg',
+      'side_images': 'Home_images_slide.svg',
       'altText': 'Slide 1',
       'caption': 'Slide 1',
       'key': 1,
     },
     {
-      'side_images': '../Images/HomeImages/Home_images_slide.svg',
+      'side_images': 'Home_images_slide.svg',
       'altText': 'Slide 2',
       'caption': 'Slide 2',
       'key': 2,
     },
     {
-      'side_images': '../Images/HomeImages/Home_images_slide.svg',
+      'side_images': 'Home_images_slide.svg',
       'altText': 'Slide 3',
       'caption': 'Slide 3',
       'key': 3,
@@ -74,51 +63,36 @@ function HomePage() {
   ];
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
-
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items_slide.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
-
   const previous = () => {
     if (animating) return;
     const nextIndex = activeIndex === 0 ? items_slide.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
-
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
-
   const slides = items_slide.map((item) => {
     console.log("itemmm", item)
     return (
       <CarouselItem
+        // className={true?'bg-none':'active'}
+        in={false}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.side_images}
-        style={{width:"100%"}}
+        style={{ width: "100%" ,boxShadow:'none',background:'transparent',backgroundColor:'transparent'}}
       >
 
-        <img src={item.key === 1 ? svgimg : Home_makebg && item.key === 2 ? svgimg : Home_makebg} alt={"text"} style={{width:"100%"}}/>
-
-
+        {/* <img src={item.key === 1 ? svgimg : Home_makebg && item.key === 2 ? svgimg : Home_makebg} alt={"text"} style={{ width: "100%",background:'none',backgroundColor:'none'}} /> */}
+       
+        <img src={require(`../Images/HomeImages/${item.side_images}`)} alt={"text"} style={{ width: "100%",background:'transparent',backgroundColor:'transparent'}} />
       </CarouselItem>
     );
   });
   // <img src={item?.side_images} alt={"text"} /> 
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-  const [currentStep, setCurrentStep] = useState(0);
-
-  const handleStepClick = (step, index) => setCurrentStep(index);
-
-  const [items, setItems] = useState(10);
-
+  const [, setItems] = useState(10);
   useEffect(() => {
     if (window.innerWidth < 576) setItems(1);
     else setItems(3);
@@ -127,7 +101,6 @@ function HomePage() {
       else setItems(3);
     });
   }, []);
-
   var TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -137,24 +110,18 @@ function HomePage() {
     this.tick();
     this.isDeleting = false;
   };
-
   TxtRotate.prototype.tick = function () {
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
-
     if (this.isDeleting) {
       this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
-
     this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
     var that = this;
     var delta = 300 - Math.random() * 100;
-
     if (this.isDeleting) { delta /= 2; }
-
     if (!this.isDeleting && this.txt === fullTxt) {
       delta = this.period;
       this.isDeleting = true;
@@ -163,12 +130,10 @@ function HomePage() {
       this.loopNum++;
       delta = 500;
     }
-
     setTimeout(function () {
       that.tick();
     }, delta);
   };
-
   window.onload = function () {
     var elements = document.getElementsByClassName('txt-rotate');
     for (var i = 0; i < elements.length; i++) {
@@ -188,48 +153,43 @@ function HomePage() {
   useEffect(() => {
     if (!toggle1) {
       var val = {}
-      hamePage.map(v => {
-        val[v.id] = false
-      })
+      hamePage.map(v => val[v.id] = false
+      )
       setToggle1(val)
     }
   }, [toggle1])
   const handledropdown = (item) => {
     setToggle1({ ...toggle1, [item.id]: !toggle1[item.id] })
+    
   }
-  // const colors = ["#0088FE", "#00C49F", "#FFBB28"];
-  // const delay = 2500;
-  // const [index, setIndex] = React.useState(0);
-  // const timeoutRef = React.useRef(null);
 
-  // function resetTimeout() {
-  //   if (timeoutRef.current) {
-  //     clearTimeout(timeoutRef.current);
-  //   }
-  // }
+  const videoEl = useRef(null);
 
-  // React.useEffect(() => {
-  //   resetTimeout();
-  //   timeoutRef.current = setTimeout(
-  //     () =>
-  //       setIndex((prevIndex) =>
-  //         prevIndex === colors.length - 1 ? 0 : prevIndex + 1
-  //       ),
-  //     delay
-  //   );
+  const attemptPlay = () => {
+    videoEl &&
+      videoEl.current &&
+      videoEl.current.play().catch((error) => {
+        console.error("Error attempting to play", error);
+      });
+  };
 
-  //   return () => {
-  //     resetTimeout();
-  //   };
-  // }, [index]);
-
+  useEffect(() => {
+    attemptPlay();
+  }, []);
 
   return (
-    <div className='' style={{ overflow: 'hidden', overflowX: "hidden" }}>
+    <div className='' style={{ overflow: 'hidden', overflowX: "hidden" }} >
       <div className='home_dev_card '>
-        <div className='dev_flex_home container py-4'>
-
-          <div className=''>
+        <div className='dev_flex_home tdi9mq0 tdi9mq4 py-4'>
+          <video src={video} type="video/mp4" controls autostart autoPlay style={{position:"absolute",opacity:"0.2",width:'100%'}} 
+            className='videoTag'
+          playsInline
+          loop
+          muted
+          alt="All the devices"
+          ref={videoEl}/>
+              
+          <div className='higher_home1'>
             <div className='align-item-center'>
               <div>
                 <div className='home_dev_font'>Stunning website<br /> designed to boost<br /> your <span className='home_dev1_Revenue'>Revenue</span></div>
@@ -239,7 +199,7 @@ function HomePage() {
                 <div className='home_dev2_get py-2'>Get Free website audit <BsArrowRight /></div>
               </div>
             </div>
-            <div>
+            <div className=''>
               <div className='d-flex gap-2'>
                 <div><IoIosStar className='homestar_color' /></div>
                 <div><IoIosStar className='homestar_color' /></div>
@@ -259,19 +219,14 @@ function HomePage() {
             </div>
           </div>
 
-          <div className='text-center w-50'>
+          <div className='corosal_image'>
             <Carousel
               activeIndex={activeIndex}
               next={next}
               previous={previous}
+              style={{background:'none'}}
             >
-              <CarouselIndicators
-                items={items_slide}
-                activeIndex={activeIndex}
-                onClickHandler={goToIndex}
-              />
               {slides}
-
             </Carousel>
           </div>
         </div>
@@ -310,19 +265,19 @@ function HomePage() {
         </ScrollCarousel>
       </div>
       <div className='home_card3_bg'>
-        <div className='home_gride container py-4'>
+        <div className='home_gride tdi9mq0 tdi9mq4 py-4'>
           <div>
             <div className='home_yourfont1'>Your Expert Web Design & Development Partner</div>
             <div className='home_arefont2 py-3'>Are you looking for top-notch Website Design Services that resonate with your brand's uniqueness? At Nexgen, we specialize in Custom Web Design solutions tailored to your specific needs. Our team crafts Responsive Web Designs that adapt seamlessly across devices, ensuring an optimal user experience for your audience.</div>
             <div>
-              {hamePage.map((item, index) => {
+              {hamePage.map((item) => {
                 return (
                   <div className=''>
                     <div className="">
-                      <div className="d-flex justify-content-between border-bottom my-2  pointer" onClick={(e) => handledropdown(item)}>
+                      <div className="d-flex justify-content-between border-bottom my-2  pointer" onClick={() => handledropdown(item)}>
                         <div className='home_Responsive py-3'> {item.title}</div>
                         <div>
-                          <div className="pointer py-3" style={{ transition: "all 1m ease" }} onClick={(e) => handledropdown(item)} width={15}>{toggle1[item.id] ? <BsChevronUp className='BsChevronDown_style fw-bold fs-5' /> : <BsChevronDown className='BsChevronDown_style fw-bold fs-5' />}</div>
+                          <div className="pointer py-3" style={{ transition: "all 1m ease" }} onClick={() => handledropdown(item)} width={15}>{toggle1[item.id] ? <BsChevronUp className='BsChevronDown_style fw-bold fs-5' /> : <BsChevronDown className='BsChevronDown_style fw-bold fs-5' />}</div>
                         </div>
                       </div>
                       <div > {toggle1[item.id] && <div className='content_bspan' style={{ padding: "0.5rem" }}> {item.discription} </div>} </div>
@@ -337,7 +292,7 @@ function HomePage() {
         </div>
       </div>
       <div className='home_card4_bg py-5'>
-        <Typography style={{ fontWeight: "900", fontSize: "35px", color: "#000", marginTop: "5vh", marginBottom: "2vh" }} variant="h3" color="primary" class="txt-rotate text-center" data-period="2000" data-rotate='[ "Looking For Something?", "Anziam Bio!", "Here You Will Be FInding All The Stuffs You Need!"]'></Typography>
+        {/* <Typography style={{ fontWeight: "900", fontSize: "35px", color: "#000", marginTop: "5vh", marginBottom: "2vh" }} variant="h3" color="primary" class="txt-rotate text-center" data-period="2000" data-rotate='[ "Looking For Something?", "Anziam Bio!", "Here You Will Be FInding All The Stuffs You Need!"]'></Typography> */}
         <div className='home_mostly_font'>We’re mostly in all sectors <span className='home_mostly_font1'>View Portfolio</span> </div>
         <div className='py-5'>
           <ScrollCarousel
@@ -346,7 +301,6 @@ function HomePage() {
             autoplaySpeed={80}
             speed={5}
           >
-
             <div className='d-flex w-100 gap-4'  >
               <div> <img src={FrameHome9} alt='FrameHome9' className='FrameHome9_style' /></div>
               <div> <img src={FrameHome8} alt='FrameHome9' className='FrameHome9_style' /></div>
@@ -359,13 +313,10 @@ function HomePage() {
               <div> <img src={FrameHome2} alt='FrameHome9' className='FrameHome9_style' /></div>
               <div> <img src={FrameHome1} alt='FrameHome9' className='FrameHome9_style' /></div>
             </div>
-
-
           </ScrollCarousel>
-
         </div>
         <div className='home_mostly_font mt-5'>Experienced with top overseas firms</div>
-        <div className='d-flex gap-4 justify-content-center py-4'>
+        <div className='d-flex gap-4 justify-content-center  py-4'>
           <div><img src={HomeCompany} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
           <div><img src={HomeCompany1} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
           <div><img src={HomeCompany2} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
@@ -377,58 +328,13 @@ function HomePage() {
       </div>
       <div className='Hpme_card5_bg py-5'>
         <div>
-          <div className='d-flex justify-content-center'>
+          <div className='d-flex justify-content-center tdi9mq0 tdi9mq4'>
             <div className='bg_home_card_makes'>
               <div className='what_home_bg'>What makes us <br /> the <span className='choice_homebg px-3 py-1'>preferred choice</span> over other?</div>
-              <div className='container'>
+              <div className=''>
                 <div>
                   <div className="sideBar">
                     <div className="">
-                      <Stepper orientation="vertical" activeStep={0} style={{ background: "none", color: "#FFF" }}>
-                        <Step className='step_bg_line' style={{ color: "#FFF" }}>
-                          <StepButton className=''>
-                            <span className='Register_home'>Design & Feedback</span>
-
-                          </StepButton>
-                        </Step>
-                        <Step active={true}>
-                          <StepButton>
-                            <span className='Register_home'>Development & Launch</span>
-                          </StepButton>
-                          <StepContent className='Create_home_font1'>
-                            <div>
-                              <div><BsCheckLg /> Website UX UI Design</div>
-                              <div><BsCheckLg /> SEO strategy</div>
-                              <div><BsCheckLg /> Website  Development</div>
-                            </div>
-                          </StepContent>
-                        </Step>
-                        <Step active={true}>
-                          <StepLabel>
-                            <span className='Register_home'>Register your name</span>
-
-                          </StepLabel>
-                          <StepContent className='Create_home_font1'>
-                            <div>
-                              <div><BsCheckLg /> Keyword analysis</div>
-                              <div><BsCheckLg /> meta tagging</div>
-                              <div><BsCheckLg /> Alt images</div>
-                            </div>
-                          </StepContent>
-                        </Step>
-                        <Step active={true}>
-                          <StepLabel>
-                            <span className='Register_home'>Lead Generation</span>
-                          </StepLabel>
-                          <StepContent className='Create_home_font1'>
-                            <div>
-                              <div><BsCheckLg /> Create leads pipeline</div>
-                              <div><BsCheckLg /> Daily leads update</div>
-                              <div><BsCheckLg /> No-cost advertising</div>
-                            </div>
-                          </StepContent>
-                        </Step>
-                      </Stepper>
                     </div>
                   </div>
                 </div>
@@ -438,14 +344,12 @@ function HomePage() {
             <div></div>
           </div>
           <div className='py-5'>
-            <div className='dev_flex_home container'>
-              <div className='d-flex justify-content-center w-100'>
-                <div>
-                  <div className='home_Create_font'>Create a constant <br />Lead supply using <br />your website.</div>
-                  <div className='my-5 py-3'><button className='home_botton py-2 px-3'><img src={Homeimage2} alt='Homeimage2' style={{ width: "22px" }} /> Get Started</button></div>
-                </div>
+            <div className='dev_flex_home tdi9mq0 tdi9mq4'>
+              <div className='system_homeimage13'>
+                  <div className='home_Create_font'>Create a constant Lead supply using your website.</div>
+                  <div className='Homeimage2_button my-4 py-3'><button className='home_botton py-2 px-3'><img src={Homeimage2} alt='Homeimage2' style={{ width: "22px" }} /> Get Started</button></div>
               </div>
-              <div className='text-center'><img src={system_homeimage} alt="system_homeimage" className='w-100' /> </div>
+              <div className='system_homeimage12 w-100'><img src={system_homeimage} alt="system_homeimage" className='system_homeimage mt-5' /> </div>
             </div>
           </div>
         </div>
@@ -459,5 +363,5 @@ function HomePage() {
     </div>
   )
 }
-
 export default HomePage
+

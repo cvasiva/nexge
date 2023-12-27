@@ -42,7 +42,7 @@ const checkNext = () => {
 const check = index => setSelectedIndex(index);
   return (
     <div className='home_card3_bg pt-5'>
-      <div className=' py-2'>
+      <div className='tdi9mq0 tdi9mq4 py-2'>
         <div className='price_font mt-5'>Choose a package that fits your needs <br></br>with our <span>convenient EMI</span></div>
         <div className='price_bg_flex'>
           <div className="price_bg py-3 my-1">
@@ -50,21 +50,23 @@ const check = index => setSelectedIndex(index);
               <div className="">
                 <section
                   id="slider"
-                  className="w-16 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0"
+                  className="d-flex mb-5"
                 >
                   <input
                     type="radio"
                     name="slider"
                     id="s1"
-                    checked={selectedIndex === 0}
-                    onClick={() => check(0)}
+                    checked={selectedIndex === 1}
+                    onClick={() => check(1)}
+                    style={{display:"none"}}
                   />
                   <input
                     type="radio"
                     name="slider"
                     id="s2"
-                    checked={selectedIndex === 1}
-                    onClick={() => check(1)}
+                    checked={selectedIndex === 0}
+                    onClick={() => check(0)}
+                    style={{display:"none"}}
                   />
                   <input
                     type="radio"
@@ -72,6 +74,7 @@ const check = index => setSelectedIndex(index);
                     id="s3"
                     checked={selectedIndex === 2}
                     onClick={() => check(2)}
+                    style={{display:"none"}}
                   />
                   <label htmlFor="s1" id="slide1">
                     <div className='my-2 py-3 px-4'>
