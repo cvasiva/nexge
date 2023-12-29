@@ -43,7 +43,7 @@ const check = index => setSelectedIndex(index);
   return (
     <div className='home_card3_bg pt-5'>
       <div className='tdi9mq0 tdi9mq4 py-2'>
-        <div className='price_font mt-5'>Choose a package that fits your needs <br></br>with our <span>convenient EMI</span></div>
+        <div className='price_font mt-5'>Choose a package that fits your needs <br></br>with our <span className='convenient_style_price'>convenient EMI</span></div>
         <div className='price_bg_flex'>
           <div className="price_bg py-3 my-1">
             <div className="">

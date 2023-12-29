@@ -1,7 +1,7 @@
 .protfilo_bg {
     background: #222;
-    padding-top: 65px;
-    height: 100vh;
+    bottom: 0;
+    /* height: 100vh; */
 }
 
 .ul_portfilo {
@@ -44,6 +44,41 @@
 .link_web1 {
     text-decoration: none;
     color: #D2D1D1;
+}
+
+.Row_margin_view{
+    margin: 1rem 2rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.titel_web {
+    text-align: center;
+    padding: 1rem;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 26.693px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.776px;
+    /* 96.564% */
+    letter-spacing: 0.801px;
+}
+
+.year_web {
+    color: #9A9A9A;
+    font-family: Inter;
+    font-size: 13.54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13.075px;
+    /* 96.564% */
+    letter-spacing: 0.406px;
+    text-align: center;
+}
+
+.protfilo_bg_hight{
+    height: 100vh;
 }
 
 @media (max-width: 768px) {

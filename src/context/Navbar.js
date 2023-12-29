@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
     Collapse,
     Navbar,
@@ -25,10 +25,20 @@ const NavbarPage = (args) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const [active, setActive] = useState(null)
+    const [colorChange, setColorchange] = useState(false);
+    const changeNavbarColor = () => {
+        if (window.scrollY >= 80) {
+            setColorchange(true);
+        } else {
+            setColorchange(false);
+        }
+    };
+    window.addEventListener("scroll", changeNavbarColor);
+
     return (
         <div>
             <div className='nav_bg'>
-                <nav className='nav1'>
+                <nav className={colorChange ? "nav1 nav12" : "nav1"}>
                     <Link to="/" className="title">
                         <NavbarBrand href="/"><img src={Nexgen_icon} alt="Nexgen_icon" style={{ width: "50%" }} /></NavbarBrand>
                     </Link>
@@ -53,7 +63,6 @@ const NavbarPage = (args) => {
                         </li>
                     </ul>
                 </nav>
-
             </div>
         </div>
 

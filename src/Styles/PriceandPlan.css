@@ -1,5 +1,5 @@
 .price_font {
-    background: linear-gradient(108deg, #333 45.08%, #8B00F8 68.09%);
+    background: linear-gradient(108deg, #372D8C 45.08%, #D6078B 68.09%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -11,6 +11,12 @@
     line-height: normal;
     letter-spacing: 0.55px;
 }
+
+/* .convenient_style_price {
+    border-radius: 30.699px;
+    background: #FFD23D;
+    color: #FFF;
+} */
 
 [type=radio] {
     display: none;
@@ -30,8 +36,9 @@
 
 #slider label {
     margin: auto 0;
-    background: #fff;
-    border-radius: 28px;
+    border-radius: 33.383px;
+    background: #FFE8ED;
+    backdrop-filter: blur(22.469593048095703px);
     width: 340px;
     height: 100%;
     /* position: absolute; */

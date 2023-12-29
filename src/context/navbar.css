@@ -2,9 +2,7 @@
     background: #FFF;
 }
 
-.nav_bg1 {
-    background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
-}
+
 
 .navdisplay {
     display: flex;
@@ -25,15 +23,19 @@
     font-weight: 400;
 }
 
-.active {
+/* .active {
     background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
-}
+} */
+
+/* .nav_bg1 {
+    background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
+} */
 
 .nav1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
+    background: transparent;
     color: white;
     position: fixed;
     z-index: 1;
@@ -41,6 +43,20 @@
     top: 0;
     right: 0;
     left: 0;
+}
+
+.nav1.nav12 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed;
+    z-index: 1;
+    padding: 0.5rem 5rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
 }
 
 .nav1 .title {
@@ -84,7 +100,7 @@
     height: 2rem;
 }
 
-nav .menu span {
+.nav1 .menu span {
     height: 0.4rem;
     width: 100%;
     background-color: #fff;
