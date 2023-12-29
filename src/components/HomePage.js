@@ -43,19 +43,25 @@ import video from '../Images/HomeImages/nexgen_mp4.mp4'
 function HomePage() {
   const items_slide = [
     {
-      'side_images': 'Home_images_slide.svg',
+      'side_images': 'Home_images_slide1.svg',
       'altText': 'Slide 1',
       'caption': 'Slide 1',
       'key': 1,
     },
     {
-      'side_images': 'Home_images_slide.svg',
+      'side_images': 'Home_images_slide1.svg',
       'altText': 'Slide 2',
       'caption': 'Slide 2',
       'key': 2,
     },
     {
-      'side_images': 'Home_images_slide.svg',
+      'side_images': 'nexgen_home_home1.svg',
+      'altText': 'Slide 3',
+      'caption': 'Slide 3',
+      'key': 3,
+    },
+    {
+      'side_images': 'nexgen_home_home2.svg',
       'altText': 'Slide 3',
       'caption': 'Slide 3',
       'key': 3,
@@ -74,20 +80,16 @@ function HomePage() {
     setActiveIndex(nextIndex);
   };
   const slides = items_slide.map((item) => {
-    console.log("itemmm", item)
     return (
       <CarouselItem
-        // className={true?'bg-none':'active'}
+        className='carsusel_bg'
         in={false}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.side_images}
-        style={{ width: "100%" ,boxShadow:'none',background:'transparent',backgroundColor:'transparent'}}
+        style={{ width: "100%", boxShadow: 'none', background: 'transparent', backgroundColor: 'transparent' }}
       >
-
-        {/* <img src={item.key === 1 ? svgimg : Home_makebg && item.key === 2 ? svgimg : Home_makebg} alt={"text"} style={{ width: "100%",background:'none',backgroundColor:'none'}} /> */}
-       
-        <img src={require(`../Images/HomeImages/${item.side_images}`)} alt={"text"} style={{ width: "100%",background:'transparent',backgroundColor:'transparent'}} />
+        <img src={require(`../Images/HomeImages/${item.side_images}`)} alt={"text"} style={{ width: "100%", background: 'transparent', backgroundColor: 'transparent' }} />
       </CarouselItem>
     );
   });
@@ -160,7 +162,7 @@ function HomePage() {
   }, [toggle1])
   const handledropdown = (item) => {
     setToggle1({ ...toggle1, [item.id]: !toggle1[item.id] })
-    
+
   }
 
   const videoEl = useRef(null);
@@ -180,15 +182,15 @@ function HomePage() {
   return (
     <div className='' style={{ overflow: 'hidden', overflowX: "hidden" }} >
       <div className='home_dev_card '>
-        <div className='dev_flex_home tdi9mq0 tdi9mq4 py-4'>
-          <video src={video} type="video/mp4" controls autostart autoPlay style={{position:"absolute",opacity:"0.2",width:'100%'}} 
+        <div className='dev_flex_home tdi9mq0 tdi9mq4'>
+          <video src={video} type="video/mp4" controls autostart autoPlay style={{ position: "absolute", opacity: "0.2", width: '100%' }}
             className='videoTag'
-          playsInline
-          loop
-          muted
-          alt="All the devices"
-          ref={videoEl}/>
-              
+            playsInline
+            loop
+            muted
+            alt="All the devices"
+            ref={videoEl} />
+
           <div className='higher_home1'>
             <div className='align-item-center'>
               <div>
@@ -199,7 +201,7 @@ function HomePage() {
                 <div className='home_dev2_get py-2'>Get Free website audit <BsArrowRight /></div>
               </div>
             </div>
-            <div className=''>
+            <div className='margin_our'>
               <div className='d-flex gap-2'>
                 <div><IoIosStar className='homestar_color' /></div>
                 <div><IoIosStar className='homestar_color' /></div>
@@ -209,9 +211,9 @@ function HomePage() {
               </div>
               <div className='home_dev3_our pt-2'>“Our new site has a 60% higher<br />
                 conversion rate than our old one”</div>
-              <div className='d-flex gap-4 my-3'>
-                <div><img src={Homeimage3} alt='Homeimage3' style={{ position: 'relative' }} /> </div>
-                <div className='py-3'>
+              <div className='d-flex gap-0 my-2'>
+                <div className='text-center'><img src={Homeimage3} alt='Homeimage3' style={{ position: 'relative', width: "50%" }} /> </div>
+                <div className=''>
                   <div className='home_font1_aswin'>Ashwin</div>
                   <div className='home_font2_aswin'>Zell Founder </div>
                 </div>
@@ -224,7 +226,7 @@ function HomePage() {
               activeIndex={activeIndex}
               next={next}
               previous={previous}
-              style={{background:'none'}}
+              className='carsusel_bg'
             >
               {slides}
             </Carousel>
@@ -265,35 +267,6 @@ function HomePage() {
         </ScrollCarousel>
       </div>
       <div className='home_card3_bg'>
-        <div className='home_gride tdi9mq0 tdi9mq4 py-4'>
-          <div>
-            <div className='home_yourfont1'>Your Expert Web Design & Development Partner</div>
-            <div className='home_arefont2 py-3'>Are you looking for top-notch Website Design Services that resonate with your brand's uniqueness? At Nexgen, we specialize in Custom Web Design solutions tailored to your specific needs. Our team crafts Responsive Web Designs that adapt seamlessly across devices, ensuring an optimal user experience for your audience.</div>
-            <div>
-              {hamePage.map((item) => {
-                return (
-                  <div className=''>
-                    <div className="">
-                      <div className="d-flex justify-content-between border-bottom my-2  pointer" onClick={() => handledropdown(item)}>
-                        <div className='home_Responsive py-3'> {item.title}</div>
-                        <div>
-                          <div className="pointer py-3" style={{ transition: "all 1m ease" }} onClick={() => handledropdown(item)} width={15}>{toggle1[item.id] ? <BsChevronUp className='BsChevronDown_style fw-bold fs-5' /> : <BsChevronDown className='BsChevronDown_style fw-bold fs-5' />}</div>
-                        </div>
-                      </div>
-                      <div > {toggle1[item.id] && <div className='content_bspan' style={{ padding: "0.5rem" }}> {item.discription} </div>} </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-            <div className=''><button className='home_get_style py-2 px-4'>Get Free Consultation <BsArrowRight /></button></div>
-          </div>
-          <div className='py-3'><img src={Homeimage5} alt='Homeimage5' className='Homeimage5_style' /> </div>
-        </div>
-      </div>
-      <div className='home_card4_bg py-5'>
-        {/* <Typography style={{ fontWeight: "900", fontSize: "35px", color: "#000", marginTop: "5vh", marginBottom: "2vh" }} variant="h3" color="primary" class="txt-rotate text-center" data-period="2000" data-rotate='[ "Looking For Something?", "Anziam Bio!", "Here You Will Be FInding All The Stuffs You Need!"]'></Typography> */}
-        <div className='home_mostly_font'>We’re mostly in all sectors <span className='home_mostly_font1'>View Portfolio</span> </div>
         <div className='py-5'>
           <ScrollCarousel
             // smartSpeed={true}
@@ -315,8 +288,34 @@ function HomePage() {
             </div>
           </ScrollCarousel>
         </div>
+        <div className='home_gride tdi9mq0 tdi9mq4 py-4'>
+          <div>
+            <div className='home_yourfont1'>Your Expert Web Design & Development Partner</div>
+            <div className='home_arefont2 py-3'>Are you looking for top-notch Website Design Services that resonate with your brand's uniqueness? At Nexgen, we specialize in Custom Web Design solutions tailored to your specific needs. Our team crafts Responsive Web Designs that adapt seamlessly across devices, ensuring an optimal user experience for your audience.</div>
+            <div>
+              {hamePage.map((item) => {
+                return (
+                  <div className=''>
+                    <div className="">
+                      <div className="d-flex justify-content-between border-bottom border-2 my-2  pointer" onClick={() => handledropdown(item)}>
+                        <div className='home_Responsive py-4'> {item.title}</div>
+                        <div>
+                          <div className="pointer py-4" style={{ transition: "all 1m ease" }} onClick={() => handledropdown(item)} width={15}>{toggle1[item.id] ? <BsChevronUp className='BsChevronDown_style fw-bold fs-5' /> : <BsChevronDown className='BsChevronDown_style fw-bold fs-5' />}</div>
+                        </div>
+                      </div>
+                      <div > {toggle1[item.id] && <div className='content_bspan' style={{ padding: "0.5rem" }}> {item.discription} </div>} </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+          <div className='py-3'><img src={Homeimage5} alt='Homeimage5' className='Homeimage5_style' />
+            <div className='text-center'><button className='home_get_style py-2 px-4'>Get Free Consultation <BsArrowRight /></button></div>
+          </div>
+        </div>
         <div className='home_mostly_font mt-5'>Experienced with top overseas firms</div>
-        <div className='d-flex gap-4 justify-content-center  py-4'>
+        <div className='d-flex gap-4 justify-content-center  py-5'>
           <div><img src={HomeCompany} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
           <div><img src={HomeCompany1} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
           <div><img src={HomeCompany2} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
@@ -326,6 +325,10 @@ function HomePage() {
           <div><img src={HomeCompany6} alt='HomeCompany' style={{ width: "10vw", height: "5vh" }} /></div>
         </div>
       </div>
+      {/*  <div className='home_card4_bg py-5'>*/}
+      {/* <Typography style={{ fontWeight: "900", fontSize: "35px", color: "#000", marginTop: "5vh", marginBottom: "2vh" }} variant="h3" color="primary" class="txt-rotate text-center" data-period="2000" data-rotate='[ "Looking For Something?", "Anziam Bio!", "Here You Will Be FInding All The Stuffs You Need!"]'></Typography> */}
+      {/* <div className='home_mostly_font'>We’re mostly in all sectors <span className='home_mostly_font1'>View Portfolio</span> </div>*/}
+      {/* </div>*/}
       <div className='Hpme_card5_bg py-5'>
         <div>
           <div className='d-flex justify-content-center tdi9mq0 tdi9mq4'>
@@ -343,11 +346,11 @@ function HomePage() {
             </div>
             <div></div>
           </div>
-          <div className='py-5'>
+          <div className=''>
             <div className='dev_flex_home tdi9mq0 tdi9mq4'>
               <div className='system_homeimage13'>
-                  <div className='home_Create_font'>Create a constant Lead supply using your website.</div>
-                  <div className='Homeimage2_button my-4 py-3'><button className='home_botton py-2 px-3'><img src={Homeimage2} alt='Homeimage2' style={{ width: "22px" }} /> Get Started</button></div>
+                <div className='home_Create_font'>Create a constant Lead supply using your website.</div>
+                <div className='Homeimage2_button my-4 py-3'><button className='home_botton py-2 px-3'><img src={Homeimage2} alt='Homeimage2' style={{ width: "22px" }} /> Get Started</button></div>
               </div>
               <div className='system_homeimage12 w-100'><img src={system_homeimage} alt="system_homeimage" className='system_homeimage mt-5' /> </div>
             </div>

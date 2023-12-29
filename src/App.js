@@ -9,6 +9,7 @@ import Navbar from './context/Navbar'
 import "@fontsource/inter";
 import "@fontsource/inter/400.css";
 import Footer from './components/Footer'
+import Mobile_App from './components/Mobile_App'
 const App = () => {
   return (
     <div className='app_bg'>
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/viewportfolio" element={<View_Portfolio_Page />} />
           <Route exact path="/price" element={<PricePage />} />
           <Route exact path="/bloge" element={<BlogsPage />} />
+          <Route exact path="/viewportfolio/Mobile" element={<Mobile_App />} />
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -98,6 +98,11 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  padding: 2.5rem 0rem;
+}
+
+.margin_our {
+  margin-top: 4rem;
 }
 
 .videoTag {
@@ -109,10 +114,11 @@
 .home_dev_font {
   color: #FFF;
   font-family: 'Inter';
-  font-size: 59px;
+  font-size: 65px;
   font-style: normal;
   font-weight: 600;
-  line-height: 64.75px;
+  line-height: 79px;
+  /* 121.538% */
   position: relative;
 }
 
@@ -219,7 +225,7 @@
 }
 
 .home_card3_bg {
-  background: radial-gradient(192.13% 76.64% at 50% 50%, rgba(255, 178, 167, 0.25) 0%, rgba(201, 191, 255, 0.25) 74.61%), #FFF;
+  background: #FDF9FF;
   position: relative;
   /* height: 100vh; */
 }
@@ -229,13 +235,15 @@
   grid-template-columns: 50% 50%;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .home_yourfont1 {
-  background: linear-gradient(89deg, #333 3.17%, #A802C3 70.7%);
+  background: linear-gradient(91deg, #3634A0 8.63%, #DE0E86 91.72%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: Inter;
   font-family: 'Inter';
   font-size: 47.376px;
   font-style: normal;
@@ -249,23 +257,24 @@
 
 .home_arefont2 {
   color: #333;
-  font-family: 'Inter';
+  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 27.806px;
+  /* 154.476% */
 }
 
 .BsChevronDown_style {
   border: none;
-  background: radial-gradient(192.13% 76.64% at 50% 50%, rgba(255, 178, 167, 0.25) 0%, rgba(201, 191, 255, 0.25) 74.61%), #FFF;
+  background: #FDF9FF;
   color: #A903C4;
 }
 
 .home_Responsive {
   color: #010101;
   font-family: 'inter';
-  font-size: 26px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 700;
   line-height: 25.107px;
@@ -273,6 +282,19 @@
 }
 
 .home_get_style {
+  border-radius: 16px;
+  border: 1px solid #010101;
+  background: #522A88;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 15.812px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19.966px;
+  /* 126.273% */
+}
+
+.home_get_style:hover {
   border-radius: 16px;
   border: 1px solid #010101;
   background: #404040;
@@ -319,7 +341,7 @@
 }
 
 .FrameHome9_style {
-  width: 20vw;
+  width: 30vw;
 }
 
 .Hpme_card5_bg {
@@ -351,7 +373,7 @@
 
 .choice_homebg {
   border-radius: 30.699px;
-  background: #03B1FF;
+  background: #C6148A;
 }
 
 .Generation_home {
@@ -550,15 +572,16 @@
   } */
 
   .home_yourfont1 {
-    background: linear-gradient(89deg, #333 3.17%, #A802C3 70.7%);
+    background: linear-gradient(91deg, #3634A0 8.63%, #DE0E86 91.72%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: Inter;
-    font-size: 19.995px;
+    font-size: 46.062px;
     font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-weight: 300;
+    line-height: 60.319px;
+    /* 130.952% */
   }
 
   .Homeimage5_style {
@@ -577,7 +600,7 @@
 
   .BsChevronDown_style {
     border: none;
-    background: radial-gradient(192.13% 76.64% at 50% 50%, rgba(255, 178, 167, 0.25) 0%, rgba(201, 191, 255, 0.25) 74.61%), #FFF;
+    background: #FDF9FF;
     color: #A903C4;
   }
 
@@ -637,9 +660,6 @@
     width: 20vw;
   }
 
-  .FrameHome9_style {
-    width: 50vw;
-  }
 
   .Hpme_card5_bg {
     background: linear-gradient(224deg, #172271 9.84%, rgba(0, 0, 0, 0.00) 66.2%), #040229;
@@ -667,7 +687,7 @@
 
   .choice_homebg {
     border-radius: 30.699px;
-    background: #03B1FF;
+    background: #C6148A;
   }
 
   .Generation_home {
@@ -797,4 +817,8 @@
 
 .slideshowDot.active {
   background-color: #FFF;
+}
+
+.carsusel_bg {
+  background: none !important;
 }

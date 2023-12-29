@@ -45,7 +45,7 @@ const PriceandPlan = () => {
     return (
         <div className=''>
             <div className='tdi9mq0 tdi9mq4 py-5'>
-                <div className='price_font mt-5'>Choose a package that fits your needs <br></br>with our <span>convenient EMI</span></div>
+                <div className='price_font mt-5'>Choose a package that fits your needs <br></br>with our <span className='convenient_style_price'>convenient EMI</span></div>
                 <div className='price_bg_flex'>
                     <div className="price_bg py-4 my-5">
                         <div className="">
@@ -88,7 +88,7 @@ const PriceandPlan = () => {
                                                 <li className='price_li py-2'><AiFillCheckCircle className='fs-4 price_icon' /> Website Performance Report</li>
                                                 <li className='price_li py-2'><AiFillCheckCircle className='fs-4 price_icon' />12 Months Free Support</li>
                                             </div>
-                                            <div className='text-center my-2'><button className='Feed_price_button py-1'><img src={sectionprice1} alt="sectionprice1" style={{ width: "20%" }} /> Feed 100 meals</button></div>
+                                            <div className='text-center my-2'><button className='Feed_price_button py-1 mb-2'><img src={sectionprice1} alt="sectionprice1" style={{ width: "20%" }} /> Feed 100 meals</button></div>
                                         </div>
                                     </label>
                                     <label htmlFor="s2" id="slide2">
@@ -106,7 +106,7 @@ const PriceandPlan = () => {
                                                 <li className='price_li py-2'><AiFillCheckCircle className='fs-4 price_icon' /> Weekly Lead Reports</li>
                                                 <li className='price_li py-2'><AiFillCheckCircle className='fs-4 price_icon' /> Competitor Surveillance</li>
                                             </div>
-                                            <div className='text-center my-2'><button className='Feed_price_button py-1'><img src={sectionprice1} alt="sectionprice1" style={{ width: "20%" }} /> Feed 150 meals</button></div>
+                                            <div className='text-center my-2'><button className='Feed_price_button py-1 mb-2'><img src={sectionprice1} alt="sectionprice1" style={{ width: "20%" }} /> Feed 150 meals</button></div>
 
                                         </div>
                                     </label>
@@ -125,7 +125,7 @@ const PriceandPlan = () => {
                                                 <li className='price_li py-2'><AiFillCheckCircle className='fs-4 price_icon' />12 Months Free Support</li>
                                             </div>
                                         </div>
-                                        <div className='text-center my-2'><button className='Feed_price_button py-1'><img src={sectionprice1} alt="sectionprice1" style={{ width: "20%" }} /> Feed 500 meals</button></div>
+                                        <div className='text-center my-2'><button className='Feed_price_button py-1 mb-2'><img src={sectionprice1} alt="sectionprice1" style={{ width: "20%" }} /> Feed 500 meals</button></div>
                                     </label>
                                 </section>
                             </div>
