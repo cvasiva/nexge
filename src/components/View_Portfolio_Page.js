@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Col, Row } from 'reactstrap';
 import { websit } from "../HomePage/HomePagejson"
 import { useNavigate } from "react-router-dom";
-import Visit from "../Images/Website/Visit.svg"
+// import Visit from "../Images/Website/Visit.svg"
 const View_Portfolio_Page = () => {
   let navigate = useNavigate();
   const handlechange = (item) => {
